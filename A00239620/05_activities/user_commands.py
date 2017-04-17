@@ -19,6 +19,7 @@ def remove_user(username):
     remove_process.wait()
     return False if username in get_all_users() else True
 
+#Activities 01
 def info_user(username):
   grep_process = Popen(["grep","/bin/bash","/etc/passwd"], stdout=PIPE, stderr=PIPE)
   user_info = Popen(["awk",'-F',':','{print $1";"$5";"$6}'], stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')

@@ -41,7 +41,8 @@ def delete_user():
     return 'some users were not deleted', 400
   else:
     return 'all users were deleted', 200
-    
+
+#Activities 01    
 @app.route(api_url+'/users/<string:username>',methods=['GET'])
 def get_user_info(username):
     user_info = info_user(username)[0]
